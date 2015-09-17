@@ -48,7 +48,7 @@ The output will then be:
 ```
 
 ### Docker Usage
-Run the docker command below passing your CKAN API key as the environment variable 'DEFAULT_API_KEY'.
+Run the docker command below passing your CKAN API key as the environment variable `DEFAULT_API_KEY.
 
 ```shell
 $ docker run -d --name org_stats \

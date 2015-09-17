@@ -70,6 +70,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
         payload = {
           'success': true,
           'message': 'Fetched organization information successfully.',
+          'organization': organization_id,
           'result': {
             'users': {
               'count': data.result.users.length,

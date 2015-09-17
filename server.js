@@ -3,7 +3,7 @@ var morgan = require('morgan')
 var express = require('express')
 var bodyParser = require('body-parser')
 
-StartApplication = function (instance) {
+var StartApplication = function (instance) {
   //
   // App variables.
   //

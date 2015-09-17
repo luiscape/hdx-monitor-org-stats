@@ -32,7 +32,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
   var _calculate_downloads = function (data) {
     var downloads = 0
     var datasets = data.result.packages
-    for (i = 0; i < datasets.length; i++) {
+    for (var i = 0; i < datasets.length; i++) {
       downloads += datasets[i].tracking_summary.total
     }
     return downloads
@@ -46,7 +46,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
     var d
     var details = []
     var datasets = data.result.packages
-    for (i = 0; i < datasets.length; i++) {
+    for (var i = 0; i < datasets.length; i++) {
       d = {
         'id': datasets[i].id,
         'name': datasets[i].title,
@@ -68,7 +68,6 @@ var FetchOrganizationInfo = function (organization_id, callback) {
   } else {
     client.action('organization_show', { id: organization_id }, function (err, data) {
       if (!err) {
-        data.result.users.forEach(function (d) { var i = 0; i += 1; return i })
         payload = {
           'success': true,
           'message': 'Fetched organization information successfully.',

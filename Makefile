@@ -1,7 +1,7 @@
 run:
 	bash bin/run.sh;
 
-setup_app:
+setup:
 	bash bin/setup.sh;
 
 tests:

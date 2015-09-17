@@ -55,7 +55,6 @@ var FetchOrganizationInfo = function (organization_id, callback) {
       details.push(d)
     }
     return details
-
   }
 
   var payload

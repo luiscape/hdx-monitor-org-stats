@@ -3,4 +3,5 @@
 #
 # Setup app.
 #
-node setup/setup.js 'dev'
+npm install -g pm2
+npm install

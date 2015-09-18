@@ -8,9 +8,9 @@ FROM node:latest
 MAINTAINER Luis Capelo <capelo@un.org>
 
 RUN \
-  && git clone https://github.com/luiscape/hdx-monitor-org-stats \
+  git clone https://github.com/luiscape/hdx-monitor-org-stats \
   && cd hdx-monitor-org-stats \
-  make setup
+  && make setup
 
 
 WORKDIR '/hdx-monitor-org-stats'

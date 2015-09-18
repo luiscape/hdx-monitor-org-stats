@@ -1,6 +1,6 @@
 {
   "name": "hdx-monitor-org-stats",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Micro-service for calculating statistics for an organization in HDX.",
   "main": "server.js",
   "scripts": {

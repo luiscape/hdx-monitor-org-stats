@@ -50,9 +50,9 @@ describe('Fetch CKAN instance data functions.', function () {
       // Restult data.
       //
       expect(result.result).to.have.a.property('users')
-      expect(result.result.users).to.have.a.property('count')
+      expect(result.result.users).to.have.a.property('total')
       expect(result.result).to.have.a.property('datasets')
-      expect(result.result.datasets).to.have.a.property('count')
+      expect(result.result.datasets).to.have.a.property('total')
       expect(result.result).to.have.a.property('downloads')
       expect(result.result.downloads).to.have.a.property('total')
       done()

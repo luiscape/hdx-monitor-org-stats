@@ -47,6 +47,27 @@ describe('Application routes.', function () {
       })
   })
 
+  it('GET [/] with an organization id should return a complete object.', function (done) {
+    application
+      .get('/ocha-fts')
+      .end(function (err, res) {
+        expect(res.body).to.have.a.property('success')
+        expect(res.body).to.have.a.property('message')
+        expect(res.body).to.have.a.property('organization')
+        expect(res.body).to.have.a.property('result')
+        done()
+      })
+  })
+
+  it('GET [/] with an organization id should users with details.', function (done) {
+    application
+      .get('/ocha-fts')
+      .end(function (err, res) {
+        expect(res.body.result.users).to.have.a.property('details')
+        done()
+      })
+  })
+
   it('GET [/404] should return a 404 status code.', function (done) {
     application
       .get('/foo/404')

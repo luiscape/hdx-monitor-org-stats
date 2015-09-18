@@ -48,6 +48,8 @@ The output will then be:
 ```
 
 ### Docker Usage
+[![](https://badge.imagelayers.io/luiscape/hdx-monitor-org-stats:latest.svg)](https://imagelayers.io/?images=luiscape/hdx-monitor-org-stats:latest 'Get your own badge on imagelayers.io')
+
 Run the docker command below passing your CKAN API key as the environment variable `DEFAULT_API_KEY`.
 
 ```shell

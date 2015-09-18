@@ -4,6 +4,9 @@ var express = require('express')
 var bodyParser = require('body-parser')
 
 var StartApplication = function (instance) {
+  if (instance === undefined) {
+    instance = 'dev'
+  }
   //
   // App variables.
   //

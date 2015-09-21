@@ -176,19 +176,19 @@ var FetchOrganizationInfo = function (organization_id, callback) {
                   }
                 },
                 'datasets': {
-                  'total': data.result.package_count
-                },
-                'views': {
-                  'total': _calculate_views(data, 'total'),
-                  'recent': _calculate_views(data, 'recent'),
-                  'mean': _mean_views(data.result.packages, 'tracking_summary'),
-                  'details': _details_views(data)
-                },
-                'downloads': {
-                  'total': _calculate_downloads(downloads, 'total'),
-                  'recent': _calculate_downloads(downloads, 'recent'),
-                  'mean': _calculate_downloads(downloads, 'mean'),
-                  'details': _details_downloads(downloads)
+                  'total': data.result.package_count,
+                  'views': {
+                    'total': _calculate_views(data, 'total'),
+                    'recent': _calculate_views(data, 'recent'),
+                    'mean': _mean_views(data.result.packages, 'tracking_summary'),
+                    'details': _details_views(data)
+                  },
+                  'downloads': {
+                    'total': _calculate_downloads(downloads, 'total'),
+                    'recent': _calculate_downloads(downloads, 'recent'),
+                    'mean': _calculate_downloads(downloads, 'mean'),
+                    'details': _details_downloads(downloads)
+                  }
                 }
               }
             }

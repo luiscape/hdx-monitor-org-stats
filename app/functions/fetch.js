@@ -123,7 +123,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
       d = {
         'id': datasets[i].id,
         'name': datasets[i].title,
-        'views': _.sum(datasets[i].resources, function (d) { return d.tracking_summary.total })
+        'downloads': _.sum(datasets[i].resources, function (d) { return d.tracking_summary.total })
       }
       details.push(d)
     }

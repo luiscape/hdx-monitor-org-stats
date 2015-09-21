@@ -53,11 +53,11 @@ describe('Fetch CKAN instance data functions.', function () {
       expect(result.result.users).to.have.a.property('total')
       expect(result.result).to.have.a.property('datasets')
       expect(result.result.datasets).to.have.a.property('total')
-      expect(result.result).to.have.a.property('downloads')
-      expect(result.result.downloads).to.have.a.property('total')
+      expect(result.result.datasets).to.have.a.property('downloads')
+      expect(result.result.datasets).to.have.a.property('views')
       done()
     }
-    Fetch.FetchOrganizationInfo('ocha-mali', Evaluate)
+    Fetch.FetchOrganizationInfo('ocha-fts', Evaluate)
   })
 
 })

@@ -27,29 +27,43 @@ The output will then be:
             "editors": 0,
             "members": 2,
             "details": {
-                "admins": ["foo", "bar"],
+                "admins": ["dabo", "djiguiba", "ouane", "sekou"],
                 "editors": [],
-                "members": ["baz"]
+                "members": ["guido", "olivieruzel"]
             }
         },
         "datasets": {
-            "total": 26
-        },
-        "downloads": {
-            "total": 2738,
-            "recent": 234,
-            "mean": 106,
-            "details": [
-              {
-                "id": "1d309b64-970f-4f28-818e-33869d13b04e",
-                "name": "Foo bar",
-                "downloads": 434
-              },
-              ...
-              ]
+            "total": 22,
+            "views": {
+                "total": 2657,
+                "recent": 205,
+                "mean": 121,
+                "details": [
+                  {
+                    "id": "236bcfcb-e05e-4b8b-8df0-e62d133828e5",
+                    "name": "Mali - Population Statistics 2013",
+                    "views": 21
+                  },
+                  ...
+                  ]
+            },
+            "downloads": {
+                "total": 608,
+                "recent": 147,
+                "mean": 28,
+                "details": [
+                  {
+                    "id": "236bcfcb-e05e-4b8b-8df0-e62d133828e5",
+                    "name": "Mali - Population Statistics 2013",
+                    "downloads": 0
+                  },
+                  ...
+                  ]
+            }
         }
     }
 }
+
 
 ```
 

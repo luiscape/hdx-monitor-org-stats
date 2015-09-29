@@ -3,6 +3,7 @@
 // for the DataStore API.
 //
 var Fetch = require('./functions/fetch')
+var Store = require('./functions/store')
 
 module.exports = function (app, Config) {
   //
@@ -50,10 +51,28 @@ module.exports = function (app, Config) {
       if (err) {
         res.send(err)
       } else {
-        res.send(data)
+        Store.StoreRecords(Config, Config.database[0].name, data, function (err, record) {
+          if (err) {
+            console.log(err)
+            var payload = {
+              'success': false,
+              'message': 'Failed to store record in database.',
+              'error': err
+            }
+            res.send(payload)
+          } else {
+            res.send(data)
+          }
+        })
       }
     })
   })
+
+  //
+  // Endpoint for fetching
+  // time-series data.
+  //
+  app.get('/historic/:organization_id', function (req, res) {})
 
   //
   // 404 route.

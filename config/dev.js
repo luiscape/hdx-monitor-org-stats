@@ -16,7 +16,7 @@ module.exports = {
         'mean_views': 'INTEGER',
         'total_downloads': 'INTEGER',
         'recent_downloads': 'INTEGER',
-        'mean_downloads': 'INTEGER',
+        'mean_downloads': 'INTEGER'
       }
     }
   ]

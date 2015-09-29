@@ -4,4 +4,7 @@ node_modules/**
 coverage/*
 coverage/**
 
+data/*
+data/**
+
 .DS_Store

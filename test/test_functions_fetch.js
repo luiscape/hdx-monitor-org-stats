@@ -1,7 +1,3 @@
-/*
- /   Testing the DataStore application.
-/                                        */
-
 /* Dependencies */
 var path = require('path')
 var http = require('http')

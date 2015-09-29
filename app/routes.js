@@ -4,6 +4,7 @@
 //
 var Fetch = require('./functions/fetch')
 var Store = require('./functions/store')
+var Historic = require('./functions/historic')
 
 module.exports = function (app, Config) {
   //
@@ -72,7 +73,30 @@ module.exports = function (app, Config) {
   // Endpoint for fetching
   // time-series data.
   //
-  app.get('/historic/:organization_id', function (req, res) {})
+  app.get('/historic/:organization_id', function (req, res) {
+    Historic.FetchAllRecords(Config, organizationInfo.id, function (err, data) {
+      if (err) {
+        var payload = {
+          'success': false,
+          'message': 'Failed to fetch historic organization records.',
+          'organization': organizationInfo.id,
+          'error': err
+        }
+        res.send(payload)
+      } else {
+        var payload = {
+          'success': true,
+          'message': 'Successfully fetched historic organization records.',
+          'organization': organizationInfo.id,
+          'result': {
+            'count': data.length,
+            'records': data
+          }
+        }
+        res.send(payload)
+      }
+    })
+  })
 
   //
   // 404 route.

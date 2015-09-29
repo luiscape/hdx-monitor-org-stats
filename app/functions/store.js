@@ -66,9 +66,9 @@ var StoreRecords = function (config, table, record, callback) {
       }
     })
 
-  })
+    db.close()
 
-  db.close()
+  })
 
 }
 

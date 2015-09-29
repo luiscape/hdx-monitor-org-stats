@@ -60,6 +60,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
   // each resource of a dataset has.
   //
   var _calculate_downloads = function (datasets, property) {
+    var d
     var downloads = 0
 
     //
@@ -69,7 +70,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
       var divisor = 0
       var dividend = 0
       for (var i = 0; i < datasets.length; i++) {
-        var d = datasets[i]
+        d = datasets[i]
         divisor += 1
         for (var j = 0; j < d.resources.length; j++) {
           dividend += d.resources[j].tracking_summary.total
@@ -83,9 +84,9 @@ var FetchOrganizationInfo = function (organization_id, callback) {
     // calculate the number of downloads.
     //
     } else {
-      for (var i = 0; i < datasets.length; i++) {
-        var d = datasets[i]
-        for (var j = 0; j < d.resources.length; j++) {
+      for (i = 0; i < datasets.length; i++) {
+        d = datasets[i]
+        for (j = 0; j < d.resources.length; j++) {
           downloads += d.resources[j].tracking_summary[property]
         }
       }
@@ -154,7 +155,7 @@ var FetchOrganizationInfo = function (organization_id, callback) {
   } else {
     FetchDownloads(organization_id, function (err, data) {
       if (err) {
-        res.send(err)
+        callback(err)
       } else {
         var downloads = data
         client.action('organization_show', { id: organization_id }, function (err, data) {
@@ -219,7 +220,7 @@ var FetchDownloads = function (organization_id, callback) {
     if (!err) {
       callback(null, data.result.results)
     } else {
-      payload = {
+      var payload = {
         'success': false,
         'message': 'Failed to fetch resource information.',
         'error': err

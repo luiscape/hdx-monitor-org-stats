@@ -26,4 +26,15 @@ describe('Configuration files.', function () {
     done()
   })
 
+  it('Configuration files should contain database properties.', function (done) {
+    expect(Dev).to.have.a.property('database')
+    expect(Prod).to.have.a.property('database')
+
+    expect(Dev.database[0]).to.have.a.property('name')
+    expect(Dev.database[0]).to.have.a.property('schema')
+    expect(Prod.database[0]).to.have.a.property('name')
+    expect(Prod.database[0]).to.have.a.property('schema')
+    done()
+  })
+
 })

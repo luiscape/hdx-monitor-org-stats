@@ -22,7 +22,7 @@ module.exports = function (app, Config) {
   app.get('/status', function (req, res) {
     var payload = {
       'online': true,
-      'message': 'Service for creating datastores on a CKAN instance.',
+      'message': Config.description,
       'CKAN_instance': Config.CkanInstance,
       'version': Config.version,
       'repository': Config.repository

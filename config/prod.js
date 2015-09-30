@@ -2,7 +2,7 @@ module.exports = {
   'CkanInstance': 'https://data.hdx.rwlabs.org',
   'description': 'Service for calculating the statistics of organizations in CKAN.',
   'ApiKey': process.env.DEFAULT_API_KEY || null,
-  'version': 'v.0.4.0',
+  'version': 'v.0.4.1',
   'repository': 'https://github.com/luiscape/hdx-monitor-org-stats',
   'DataFolder': 'data',
   'database': [

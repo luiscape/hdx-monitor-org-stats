@@ -7,6 +7,7 @@ At times, an organization would like to know general stats about how their datas
 The API has the following working methods:
 
 * `/[ORGANIZATION_ID]` **GET**: Retrieves statistics about an organization in CKAN.
+* `/historic/[ORGANIZATION_ID]` **GET**: Retrieves a historic time-series about an organization in CKAN.
 
 Example request:
 ```shell
@@ -63,7 +64,56 @@ The output will then be:
         }
     }
 }
+```
 
+It is also possible to get a historic time-line by querying the `/historic` endpoint with an organization id. Here's an example:
+
+```shell
+$ curl http://localhost:2000/historic/foo-bar
+```
+
+The response will be:
+
+```json
+{
+    "success": true,
+    "message": "Successfully fetched historic organization records.",
+    "organization": "foo-bar",
+    "result": {
+        "count": 3,
+        "records": [{
+            "organization": "foo-bar",
+            "date": "2015-09-28",
+            "number_of_datasets": 1,
+            "total_views": 1,
+            "recent_views": 1,
+            "mean_views": 1,
+            "total_downloads": 1,
+            "recent_downloads": 1,
+            "mean_downloads": 1
+        }, {
+            "organization": "foo-bar",
+            "date": "2015-09-29",
+            "number_of_datasets": 17,
+            "total_views": 973,
+            "recent_views": 62,
+            "mean_views": 58,
+            "total_downloads": 81,
+            "recent_downloads": 42,
+            "mean_downloads": 5
+        }, {
+            "organization": "foo-bar",
+            "date": "2015-09-30",
+            "number_of_datasets": 17,
+            "total_views": 975,
+            "recent_views": 61,
+            "mean_views": 58,
+            "total_downloads": 81,
+            "recent_downloads": 42,
+            "mean_downloads": 5
+        }]
+    }
+}
 
 ```
 
